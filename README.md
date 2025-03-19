@@ -21,7 +21,6 @@ Este projeto é um exemplo de aplicação desenvolvida em Cypress + JS. Ele demo
     └── support
     │   ├── commands.js
     │   └── e2e.js
-├── node_modules
 ├── package-lock.json
 ├── package.json
 └── README.md
