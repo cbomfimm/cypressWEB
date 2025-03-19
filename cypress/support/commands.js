@@ -26,8 +26,6 @@
 
 Cypress.Commands.add('login', () => {
 
-    let username, password
-
     cy.visit('/')
 
     cy.get('.orangehrm-demo-credentials')
@@ -35,17 +33,16 @@ Cypress.Commands.add('login', () => {
         .contains('Username')
         .invoke('text')
         .then((text) => {
-            username = text.split(': ')[1].trim()
+            const username = text.split(': ')[1]
+                .trim()
 
             cy.get('.orangehrm-demo-credentials')
                 .find('p')
                 .contains('Password')
                 .invoke('text')
                 .then((text) => {
-                    password = text.split(': ')[1].trim()
-
-                    cy.log(username)
-                    cy.log(password)
+                    const password = text.split(': ')[1]
+                        .trim()
 
                     cy.get('input[name="username"]')
                         .type(username)
